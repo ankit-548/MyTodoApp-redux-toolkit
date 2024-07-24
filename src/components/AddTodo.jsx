@@ -11,7 +11,7 @@ function AddTodo() {
         setInput('');
     }
     return (
-        <div className='form_app'>
+        <div className='form'>
             <form onSubmit={clickHandler}>
                 <label>Add todo from here</label>
                 <input type="text" value={input} onChange={e => setInput(e.target.value)}/>
