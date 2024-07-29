@@ -79,8 +79,13 @@
   text-align: justify;
   padding: 20px;
 }
-.ul li button {
+.ul li #delete {
   background-color: red;
+  position: fixed;
+  right: 380px;
+}
+.ul li #edit {
+  background-color: rgb(248, 255, 40);
   position: fixed;
   right: 480px;
 }

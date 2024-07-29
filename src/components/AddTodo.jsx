@@ -1,10 +1,13 @@
 import { useState } from 'react';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import { addTodo } from '../features/todos/todoSlice';
 
 function AddTodo() {
     const [input, setInput] = useState('');
-    const dispatch = useDispatch();
+    const dispatch = useDispatch();    
+    const editTodo = useSelector(state => state.editTodo);
+    const todos = useSelector(state => state.todos);
+    console.log(todos[editTodo]);
     function clickHandler(e) {
         e.preventDefault();
         dispatch(addTodo(input));
