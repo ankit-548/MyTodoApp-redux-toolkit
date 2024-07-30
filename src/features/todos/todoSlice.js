@@ -22,6 +22,7 @@ export const toDoSlice = createSlice({
             ))
         },
         updateTodo: (state, action) => {
+            console.log('todoSlice line no. 25', action);
             state.editTodo.id =  action.payload;
         }
     }
