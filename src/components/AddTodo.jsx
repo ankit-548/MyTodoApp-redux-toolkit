@@ -18,15 +18,16 @@ function AddTodo() {
         e.preventDefault();
         dispatch(updateTodo(update));
         setInput('');
+        setUpdate({id:'', text:''});
     }
-    if(todo !== null && todo != undefined) {
-        setUpdate(prevState => ({ ...prevState, text:todo.text}))
+    if(todo) {  
+        // setUpdate(prevState => ({ ...prevState, text:todo.text}))
         return (
             <div className='form'>
                 <form onSubmit={updateHandler}>
 
                     <label>Edit todo from here</label>
-                    <input type="text" value={update.text} onChange={e => setUpdate({id:todo.id, text:e.target.value})}/>
+                    <input type="text" value={update.text!=='' ? update.text : todo.text} onChange={e => setUpdate({id:todo.id, text:e.target.value})}/>
                     <button type="submit">Update</button>
                 </form>
             </div>
