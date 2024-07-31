@@ -72,6 +72,12 @@
 }
 .form button {
   margin: 5px;
+}
+
+#btn1 {
+  background-color: rgb(158, 255, 158);
+}
+#btn2 {
   background-color: green;
 }
 

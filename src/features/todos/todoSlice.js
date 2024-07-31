@@ -22,12 +22,10 @@ export const toDoSlice = createSlice({
             ))
         },
         updateTodo: (state, action) => {
-            console.log(state.todos, 1);
             if(typeof action.payload === 'string') {
-                console.log(state.todos, 2);
                 state.editTodo.id =  action.payload;
             } else {
-                console.log(state.todos, 3);
+                state.editTodo.id = {};
                 const index = state.todos.findIndex(todo => (todo.id === action.payload.id))
                 if(index!==-1) {
                     state.todos[index].text = action.payload.text;

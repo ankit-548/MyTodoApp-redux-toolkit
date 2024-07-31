@@ -8,7 +8,7 @@ function AddTodo() {
     const dispatch = useDispatch();    
     const editTodo = useSelector(state => state.editTodo);
     const todos = useSelector(state => state.todos);
-    const todo = todos.find( data => data.id === editTodo.id);
+    var todo = todos.find( data => data.id === editTodo.id);
     function clickHandler(e) {
         e.preventDefault();
         dispatch(addTodo(input));
@@ -20,15 +20,13 @@ function AddTodo() {
         setInput('');
         setUpdate({id:'', text:''});
     }
-    if(todo) {  
-        // setUpdate(prevState => ({ ...prevState, text:todo.text}))
+    if(todo) {
         return (
             <div className='form'>
                 <form onSubmit={updateHandler}>
-
                     <label>Edit todo from here</label>
                     <input type="text" value={update.text!=='' ? update.text : todo.text} onChange={e => setUpdate({id:todo.id, text:e.target.value})}/>
-                    <button type="submit">Update</button>
+                    <button id="btn1" type="submit">Update</button>
                 </form>
             </div>
         );        
@@ -39,7 +37,7 @@ function AddTodo() {
 
                     <label>Add todo from here</label>
                     <input type="text" value={input} onChange={e => setInput(e.target.value)}/>
-                    <button type="submit">Submit</button>
+                    <button id="btn2" type="submit">Submit</button>
                 </form>
             </div>
         );
